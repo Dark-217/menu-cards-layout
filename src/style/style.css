@@ -1,0 +1,11 @@
+header {
+    padding: 30px 50px;
+    display: flex;
+    justify-items: end;
+}
+
+footer {
+    padding: 30px 50px;
+    display: flex;
+    justify-items: center;
+}
