@@ -1,0 +1,36 @@
+.menu {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0;
+    background: #f0f0f0;
+    width: 300px;
+    background-color: lightsteelblue;
+    padding-top: 30px;
+}
+
+.menu-item {
+    /* padding: 20px 0px; */
+    overflow: hidden;
+}
+
+.menu-link,
+.menu-button {
+    text-decoration: none;
+    color: #0366d6;
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 20px 10px;
+    cursor: pointer;
+}
+
+.menu-link:hover,
+.menu-button:hover {
+    background-color: #e0e0e0;
+}
+
+.menu-button:focus {
+    outline: none;
+}
