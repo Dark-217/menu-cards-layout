@@ -17,7 +17,7 @@ const Card: React.FC<Props> = ({ title, author, createdAt, onRemove }) => {
     <div className="card" onClick={toggleExpand}>
       <div className="flex justify-between">
         <div className="card-title">{title}</div>
-        <div className="card-content">{createdAt}</div>
+        <div className="card-content">{createdAt.slice(0, 10)}</div>
       </div>
       {expanded && (
         <>
