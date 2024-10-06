@@ -6,7 +6,7 @@ import Landing from './view';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Landing />
     </div>
   );

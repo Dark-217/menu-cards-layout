@@ -2,16 +2,36 @@
     display: flex;
 }
 
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.top-0 {
+    top: 0;
+}
+
+.bottom-0 {
+    bottom: 0;
+}
+
 .justify-start {
-    justify-items: start;
+    justify-content: start;
 }
 
 .justify-center {
-    justify-items: center;
+    justify-content: center;
 }
 
 .justify-end {
-    justify-items: end;
+    justify-content: end;
+}
+
+.justify-between {
+    justify-content: space-between;
 }
 
 .flex-row {
@@ -24,4 +44,24 @@
 
 .w-full {
     width: 100%;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.h-screen {
+    height:100vh;
+}
+
+.overflow-auto {
+    overflow: auto;
+}
+
+.p-24 {
+    padding: 96px;
+}
+
+.pr-32 {
+    padding-right: 128px;
 }

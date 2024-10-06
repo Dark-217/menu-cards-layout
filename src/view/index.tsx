@@ -6,9 +6,9 @@ import Footer from "../components/Footer";
 
 const Landing: React.FC = () => {
   return (
-    <div className="flex flex-row">
+    <div className="flex h-screen">
       <Menu />
-      <div className="flex flex-col">
+      <div className="flex flex-col w-full">
         <Header />
         <CardList />
         <Footer />
