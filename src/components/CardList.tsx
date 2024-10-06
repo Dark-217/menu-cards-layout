@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Card from "./Card";
 import Pagination from "./Pagination";
+import SortingSelect from "./SortingSelect";  // Import the sorting component
 
 type Article = {
   objectID: string;
@@ -14,29 +15,42 @@ const CardList: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(10);
+  const [sortField, setSortField] = useState<string>('');
+  const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
 
   useEffect(() => {
-    axios
-      .get(`https://hn.algolia.com/api/v1/search?page=${currentPage - 1}`)
-      .then((response) => {
+    axios.get(`https://hn.algolia.com/api/v1/search?page=${currentPage - 1}`)
+      .then(response => {
         setArticles(response.data.hits);
-        console.log("RRRR", response)
         setTotalPages(response.data.nbPages);
       })
-      .catch((error) => console.error("Error fetching data:", error));
+      .catch(error => console.error("Error fetching data:", error));
   }, [currentPage]);
+
+  const sortedArticles = [...articles].sort((a, b) => {
+    if (!sortField) return 0;
+    const valueA = a[sortField as keyof Article];
+    const valueB = b[sortField as keyof Article];
+    if (valueA < valueB) return sortDirection === 'asc' ? -1 : 1;
+    if (valueA > valueB) return sortDirection === 'asc' ? 1 : -1;
+    return 0;
+  });
 
   return (
     <div className="h-screen p-24 overflow-auto">
-      {articles.map((article) => (
+      <SortingSelect
+        sortField={sortField}
+        sortDirection={sortDirection}
+        onFieldChange={setSortField}
+        onDirectionChange={setSortDirection}
+      />
+      {sortedArticles.map((article) => (
         <Card
           key={article.objectID}
           title={article.title}
           author={article.author}
           createdAt={article.created_at}
-          onRemove={() =>
-            setArticles(articles.filter((a) => a.objectID !== article.objectID))
-          }
+          onRemove={() => setArticles(articles.filter((a) => a.objectID !== article.objectID))}
         />
       ))}
       <Pagination
