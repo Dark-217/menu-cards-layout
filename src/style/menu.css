@@ -5,11 +5,14 @@
     background: #f0f0f0;
     width: 300px;
     background-color: lightsteelblue;
-    padding-top: 30px;
 }
 
 .menu-item {
     overflow: hidden;
+}
+
+.menu-content {
+    padding: 30px 10px 30px 10px;
 }
 
 .menu-link,
@@ -71,6 +74,6 @@
         position: fixed;
         height: 100vh;
         z-index: 10;
-        width: 300px;
+        width: 200px;
     }
 }
