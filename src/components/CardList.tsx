@@ -9,6 +9,8 @@ type Article = {
   title: string;
   author: string;
   created_at: string;
+  url: string;
+  _tags: string[];
 };
 
 const CardList: React.FC = () => {
@@ -37,7 +39,7 @@ const CardList: React.FC = () => {
   });
 
   return (
-    <div className="h-screen p-24 overflow-auto">
+    <div className="h-screen overflow-auto p-6">
       <SortingSelect
         sortField={sortField}
         sortDirection={sortDirection}
@@ -49,6 +51,8 @@ const CardList: React.FC = () => {
           key={article.objectID}
           title={article.title}
           author={article.author}
+          url={article.url}
+          tags={article._tags.join(', ')}
           createdAt={article.created_at}
           onRemove={() => setArticles(articles.filter((a) => a.objectID !== article.objectID))}
         />

@@ -9,7 +9,6 @@
 }
 
 .menu-item {
-    /* padding: 20px 0px; */
     overflow: hidden;
 }
 
@@ -33,4 +32,45 @@
 
 .menu-button:focus {
     outline: none;
+}
+
+.close-menu {
+    display: flex !important;
+    justify-content: end;
+    padding: 10px 20px 0px 0px;
+    color: gray;
+    font-size: 20px;
+}
+
+.open-menu {
+    display: fixed;
+    padding: 10px;
+    height: 10px;
+    padding-top: 40px;
+}
+
+.laptop-menu {
+    display: block;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+}
+
+@media screen and (max-width: 1024px) {
+    .laptop-menu {
+        display: none !important;
+    }
+
+    .mobile-menu {
+        display: block !important;
+    }
+
+    .menu {
+        position: fixed;
+        height: 100vh;
+        z-index: 10;
+        width: 300px;
+    }
 }

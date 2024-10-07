@@ -1,5 +1,3 @@
-
-/* Container styling */
 .pagination-container {
     display: flex;
     align-items: center;
@@ -8,13 +6,12 @@
     margin-top: 20px;
 }
 
-/* Generic button styling */
 .pagination-container button {
     color: #0366d6;
     background-color: transparent;
     border: 1px solid transparent;
     padding: 5px 10px;
-    margin: 0 4px;
+    margin: 0 1px;
     cursor: pointer;
     font-size: 14px;
     border-radius: 5px;
@@ -22,27 +19,23 @@
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-/* Button hover effects */
 .pagination-container button:hover:not(:disabled) {
-    background-color: #f6f8fa; /* Light gray background on hover */
+    background-color: #f6f8fa;
     border-color: #0366d6;
 }
 
-/* Active page styling */
 .pagination-container button.active {
     font-weight: bold;
-    color: #ffffff; /* White text for active button */
-    background-color: #0366d6; /* Blue background for active button */
+    color: #ffffff;
+    background-color: #0366d6;
     border-color: #0366d6;
 }
 
-/* Disabled button styling */
 .pagination-container button:disabled {
-    color: #959da5; /* Gray text for disabled buttons */
+    color: #959da5;
     cursor: not-allowed;
 }
 
-/* Styling for ellipsis (...) to appear unclickable */
 .pagination-container button.ellipsis {
     cursor: default;
     background-color: transparent;

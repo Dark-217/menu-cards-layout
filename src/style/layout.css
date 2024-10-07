@@ -55,17 +55,25 @@
 }
 
 .h-screen {
-    height:100vh;
+    height: 100vh;
 }
 
 .overflow-auto {
     overflow: auto;
 }
 
-.p-24 {
-    padding: 96px;
+.p-6 {
+    padding: 24px;
 }
 
 .pr-32 {
     padding-right: 128px;
+}
+
+.w-300 {
+    width: 300px;
+}
+
+.w-0 {
+    width: 0px;
 }

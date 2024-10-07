@@ -40,7 +40,7 @@ const Pagination: React.FC<PaginationProps> = ({ total, current, onSelect }) => 
     return (
         <div className="pagination-container">
             <button onClick={() => onSelect(Math.max(1, current - 1))} disabled={current === 1}>
-                Previous
+                ⟨⟨
             </button>
             {pageNumbers.map((page, index) => (
                 <button
@@ -52,7 +52,7 @@ const Pagination: React.FC<PaginationProps> = ({ total, current, onSelect }) => 
                 </button>
             ))}
             <button onClick={() => onSelect(Math.min(total, current + 1))} disabled={current === total}>
-                Next
+                ⟩⟩
             </button>
         </div>
     );
