@@ -44,9 +44,9 @@ const Menu: React.FC<MenuProps> = ({ items }) => {
         <ul className="menu h-screen">
           <div className="menu-content">
             {items.map((item, index) => (
-              <>
+              <div key={index}>
                 {index == items.length - 1 && <hr />}
-                <li key={index} className="menu-item">
+                <li className="menu-item">
                   {item.href ? (
                     <a
                       href={item.href}
@@ -61,7 +61,7 @@ const Menu: React.FC<MenuProps> = ({ items }) => {
                     </button>
                   )}
                 </li>
-              </>
+              </div>
             ))}
           </div>
         </ul>
